@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 // import Swiper core and required modules
 import { Navigation, Pagination, Autoplay, Scrollbar, A11y } from 'swiper/modules';

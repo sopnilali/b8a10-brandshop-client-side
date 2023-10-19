@@ -1,5 +1,4 @@
 import { Link, useLoaderData } from "react-router-dom";
-import Header from "../Header";
 import { useEffect, useState } from "react";
 
 const UpdateProduct = () => {

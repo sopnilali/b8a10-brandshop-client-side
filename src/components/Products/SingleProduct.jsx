@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from 'react';
 import { Link, useLoaderData, useParams } from 'react-router-dom';
 import ProductSlider from './ProductSlider';
 
