@@ -15,7 +15,6 @@ const Header = () => {
   const navigate = useNavigate()
   const navlinks = <>
               <li className="mr-2 mb-2 md:mb-1"><NavLink to="/">Home</NavLink></li>
-              <li className="mr-2 mb-2 md:mb-1"><NavLink to="/products">Products</NavLink></li>
               <li className="mr-2 mb-2 md:mb-1"><NavLink to="/add-products">Add Product</NavLink></li>
               <li className="mr-2 mb-2 md:mb-1"><NavLink to="/brands">Brands</NavLink></li>
               <li className="mr-2 mb-2 md:mb-1"><NavLink to={`/mycarts/${user?.uid}`}>MyCart</NavLink></li>

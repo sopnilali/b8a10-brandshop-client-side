@@ -4,8 +4,6 @@ import Header from "../../components/Header";
 import { useState } from "react";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import useAuth from "../../hooks/useAuth";
-
 
 
 const MyCart = () => {
@@ -14,7 +12,7 @@ const cartdata = useLoaderData()
     const [Data, setData] = useState(cartdata);
 
     const handleCartDelete = (_id)=>{
-        fetch(`http://localhost:5000/mycarts/${_id}`, {
+        fetch(`https://mobilemaya-server-side.vercel.app/mycarts/${_id}`, {
             method: 'DELETE',
         })
         .then((res) => res.json())

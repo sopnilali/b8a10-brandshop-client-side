@@ -16,20 +16,21 @@ const Login = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    const form = e.target.form
-    const email = form.email.value
-    const password = form.password.value
-    console.log(email,password);
-
+    const email = e.target.email.value
+    const password = e.target.password.value
+    console.log(email, password);
+    e.target.reset();
+    
     loginUser(email, password)
     .then(result => {
-      e.target.form.reset();
       navigate("/")
-      toast("Login successfully!!");
+
+      toast.success("Login successfully!!");
       console.log(result.user);
 
     })
     .catch(err => {
+      toast.warning("Please valid email and password!!");
       console.log(err);
     })
 
@@ -53,12 +54,12 @@ const Login = () => {
 
           {/* <!-- Right column container --> */}
           <div className="mb-12 md:mb-0 md:w-8/12 lg:w-5/12 xl:w-5/12">
-            <form onClick={handleLogin}>
+            <form onSubmit={handleLogin}>
             <h2 className="text-4xl my-3 font-semibold"> Login Now!!</h2>
               {/* <!-- Email input --> */}
               <TEInput
-                type='email'
-                name='email'
+                type="email"
+                name="email"
                 label="Email address"
                 size="lg"
                 className="mb-6"
@@ -66,7 +67,7 @@ const Login = () => {
 
               {/* <!--Password input--> */}
               <TEInput
-                type='password'
+                type="password"
                 label="Password"
                 name='password'
                 className="mb-6"
@@ -77,7 +78,7 @@ const Login = () => {
               <div className="text-center lg:text-left">
                 <TERipple rippleColor="light">
                   <button
-                    type="button"
+                  type="submit"
                     className="inline-block rounded bg-primary px-7 pb-2.5 pt-3 text-sm font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
                   >
                     Login

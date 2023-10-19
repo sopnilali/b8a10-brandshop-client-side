@@ -19,8 +19,9 @@ const Register = () => {
         const userImage =  e.target.userImage.value
         const password = e.target.password.value
         const AcceptTerms = e.target.terms.checked
-        e.target.reset();
+        
 
+        
         if (password.length < 6 ){
           return toast.error("Password should be at least 6 characters or longer..");
         }
@@ -34,11 +35,11 @@ const Register = () => {
         else if(!AcceptTerms){
             return toast.warning('Please accept terms before registering')
         }
-
         createUser(email, password)
         .then(result => {
           navigate("/")
-            e.target.form.reset();
+          e.target.reset();
+          console.log(result.user);
             updateProfile(result.user, {
                 displayName:username,
                 photoURL:userImage
@@ -86,7 +87,7 @@ const Register = () => {
               ></TEInput>
               {/* <!-- Email input --> */}
               <TEInput
-                type="text"
+                type="email"
                 name="email"
                 label="Email address"
                 size="lg"
