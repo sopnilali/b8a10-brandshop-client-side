@@ -50,28 +50,23 @@ const Header = () => {
   </div>
   <div className="navbar-end">
   <span className='mx-5 '>{user?.displayName}</span> 
-  <div className="dropdown dropdown-end">
+  {
+    user? <>
+    <div className="dropdown dropdown-end">
       <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
         <div className="w-10 rounded-full">
           <img src={user?.photoURL} />
         </div>
       </label>
-      <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
-        <li>
-          <a className="justify-between">
-            Profile
-            <span className="badge">New</span>
-          </a>
-        </li>
-        <li><a>Settings</a></li>
-        <li><a>Logout</a></li>
-      </ul>
     </div>
+    </>
+    :<></>
+  }
   {
       user ? <>
-      <a onClick={handleLogout} className="btn btn-sm capitalize hover:bg-orange-600 hover:text-white">Sing Out</a>
+      <a onClick={handleLogout} className="btn btn-sm capitalize hover:bg-orange-600 hover:text-white">Log Out</a>
       </>
-      : <NavLink to="/login" className="btn btn-sm">Login</NavLink>
+      : <NavLink to="/login" className="btn btn-sm ">Login</NavLink>
       
     } 
   </div>
