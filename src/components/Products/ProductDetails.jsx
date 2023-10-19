@@ -18,7 +18,7 @@ const ProductDetails = () => {
         const mycart = {productName,brandname,price,productImage, productID }
         console.log(mycart);
 
-        fetch('http://localhost:5000/mycarts', {
+        fetch('https://mobilemaya-server-side.vercel.app/mycarts', {
           method: 'POST',
           headers: {
             'content-type': 'application/json'
