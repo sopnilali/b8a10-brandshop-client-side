@@ -1,23 +1,23 @@
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, useParams } from "react-router-dom";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import { useState } from "react";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import useAuth from "../../hooks/useAuth";
 
 
 
 const MyCart = () => {
 
+  const { user } = useAuth()
 
+  const cartdata = useLoaderData()
 
-    const mycarts = useLoaderData()
-    console.log(mycarts);
-
-    const [Data, setData] = useState(mycarts);
+    const [Data, setData] = useState(cartdata);
 
     const handleCartDelete = (_id)=>{
-        fetch(`https://mobilemaya-server-side.vercel.app/mycarts/${_id}`, {
+        fetch(`http://localhost:5000/mycarts/${_id}`, {
             method: 'DELETE',
         })
         .then((res) => res.json())
@@ -27,8 +27,7 @@ const MyCart = () => {
             if( data.deletedCount > 0 ) {
               toast.success('Cart deleted successfully')
               const remaining = Data.filter(product => product._id !== _id)
-              setData(remaining);
-              
+              setData(remaining);  
             }
         })
     }

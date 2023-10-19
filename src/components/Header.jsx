@@ -1,21 +1,23 @@
-import { Link, NavLink, Navigate, useNavigate } from 'react-router-dom';
+import { Link, NavLink, Navigate, useNavigate, useParams } from 'react-router-dom';
 import useAuth from '../hooks/useAuth';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './Products/Header.css'
+import { useEffect, useState } from 'react';
 
 
 const Header = () => {
 
-  const { user, logoutUser } = useAuth()
-  console.log(user);
-  const navigate = useNavigate()
 
+
+  const { user, logoutUser } = useAuth()
+  
+  const navigate = useNavigate()
   const navlinks = <>
               <li className="mr-2 mb-2 md:mb-1"><NavLink to="/">Home</NavLink></li>
               <li className="mr-2 mb-2 md:mb-1"><NavLink to="/add-products">Add Product</NavLink></li>
               <li className="mr-2 mb-2 md:mb-1"><NavLink to="/brands">Brands</NavLink></li>
-              <li className="mr-2 mb-2 md:mb-1"><NavLink to="/mycarts">MyCart</NavLink></li>
+              <li className="mr-2 mb-2 md:mb-1"><NavLink to={`/mycarts/${user?.uid}`}>MyCart</NavLink></li>
   </>
 
   const handleLogout = ()=> {
@@ -66,9 +68,13 @@ const Header = () => {
       user ? <>
       <a onClick={handleLogout} className="btn btn-sm capitalize hover:bg-orange-600 hover:text-white">Log Out</a>
       </>
-      : <NavLink to="/login" className="btn btn-sm ">Login</NavLink>
+      : <>
+      <NavLink to="/login" className="btn btn-sm ">Login</NavLink>
       
-    } 
+      </>
+      
+    }
+
   </div>
 </div>   
         </>

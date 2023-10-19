@@ -2,9 +2,12 @@ import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import useAuth from '../../hooks/useAuth';
 
 const ProductDetails = () => {
 
+  const { user } = useAuth()
+  console.log();
     const productDetails = useLoaderData()
     console.log(productDetails);
 
@@ -13,12 +16,13 @@ const ProductDetails = () => {
         const productName = productDetails.productName;
         const brandname = productDetails.brandName
         const productID = productDetails._id
+        const userID = user.uid
         const price = productDetails.price
         const productImage = productDetails.purl
-        const mycart = {productName,brandname,price,productImage, productID }
+        const mycart = {productName,brandname,price,productImage, productID, userID }
         console.log(mycart);
 
-        fetch('https://mobilemaya-server-side.vercel.app/mycarts', {
+        fetch('http://localhost:5000/mycarts', {
           method: 'POST',
           headers: {
             'content-type': 'application/json'

@@ -21,7 +21,7 @@ const Routes = createBrowserRouter( [
         {
           path:'/',
           element:<Home/>,
-          loader:()=> fetch('https://mobilemaya-server-side.vercel.app/products/')
+          loader:()=> fetch('http://localhost:5000/products/')
         }
       ]
     },
@@ -31,17 +31,17 @@ const Routes = createBrowserRouter( [
             {
               path:'/brands',
               element:<Brands />,
-              loader: ()=> fetch(`https://mobilemaya-server-side.vercel.app/brands`)
+              loader: ()=> fetch(`http://localhost:5000/brands`)
             },
             {
               path:'/products/:name',
               element:<SingleProduct />,
-              loader:({params}) => fetch(`https://mobilemaya-server-side.vercel.app/products/${params.name}`)
+              loader:({params}) => fetch(`http://localhost:5000/products/${params.name}`)
             },
             {
               path:'/product-details/:id',
               element:<PrivateRoutes><ProductDetails/></PrivateRoutes>,
-              loader:({params}) => fetch(`https://mobilemaya-server-side.vercel.app/product/${params.id}`)
+              loader:({params}) => fetch(`http://localhost:5000/product/${params.id}`)
             }
             
       ]
@@ -53,7 +53,7 @@ const Routes = createBrowserRouter( [
     {
       path:'/update-product/:id',
       element:<PrivateRoutes><UpdateProduct/></PrivateRoutes>,
-      loader: ({params})=> fetch(`https://mobilemaya-server-side.vercel.app/product/${params.id}`)
+      loader: ({params})=> fetch(`http://localhost:5000/product/${params.id}`)
     },
     {
       path:'/add-brands',
@@ -68,9 +68,9 @@ const Routes = createBrowserRouter( [
       element:<Register/>
     },
     {
-      path:'/mycarts',
-      element:<PrivateRoutes><MyCart/></PrivateRoutes>,
-      loader: ()=> fetch('https://mobilemaya-server-side.vercel.app/mycarts')
+      path:'/mycarts/:userId',
+      element:<MyCart/>,
+      loader: ({params})=> fetch(`http://localhost:5000/mycarts/${params.userId}`)
     }
 ])
 

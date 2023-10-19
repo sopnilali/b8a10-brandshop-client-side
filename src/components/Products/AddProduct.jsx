@@ -6,7 +6,7 @@ const AddProduct = () => {
   const [allbrand, setAllbrand] = useState([])
 
   useEffect(()=> {
-    fetch('https://mobilemaya-server-side.vercel.app/brands')
+    fetch('http://localhost:5000/brands')
     .then(res => res.json())
     .then(data => setAllbrand(data))
 },[])
@@ -25,7 +25,7 @@ const AddProduct = () => {
         const products = {productName, brandName, types, price, purl, rating, shortDes}
         console.log(products);
 
-        fetch('https://mobilemaya-server-side.vercel.app/products', {
+        fetch('http://localhost:5000/products', {
           method: 'POST',
           headers: {
             'content-type': 'application/json'

@@ -60,6 +60,7 @@ const Register = () => {
           <div className="mb-12 md:mb-0 md:w-8/12 lg:w-5/12 xl:w-5/12">
             <form onSubmit={handleRegister}>
               {/* <!-- Username input --> */}
+              <h2 className="text-4xl my-3 font-semibold">Registration Now !!</h2>
               <TEInput
                 type="text"
                 name="username"

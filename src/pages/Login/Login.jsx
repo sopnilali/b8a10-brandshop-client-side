@@ -54,7 +54,7 @@ const Login = () => {
           {/* <!-- Right column container --> */}
           <div className="mb-12 md:mb-0 md:w-8/12 lg:w-5/12 xl:w-5/12">
             <form onClick={handleLogin}>
-
+            <h2 className="text-4xl my-3 font-semibold"> Login Now!!</h2>
               {/* <!-- Email input --> */}
               <TEInput
                 type='email'

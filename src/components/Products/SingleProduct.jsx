@@ -40,7 +40,7 @@ const SingleProduct = () => {
                                 </div>
                                 <h2 className='text-center mt-3 text-secondary'>BDT {product?.price}</h2>
                                 <div className='flex flex-col md:flex-row items-center gap-4 mb-5 mt-2 justify-center'>
-                               <Link to={`/product-details/${product?._id}`}> <button className='btn rounded-md md:px-3 btn-sm md:btn-sm btn-primary btn-primary'>Details</button></Link>
+                               <Link to={`/product-details/${product?._id}`}> <button className='btn rounded-md md:px-3 btn-sm md:btn-sm btn-primary'>Details</button></Link>
                                 <Link to={`/update-product/${product?._id}`}><button className='btn rounded-md md:px-3 btn-sm md:btn-sm '>Update </button></Link>
                                 </div>
                             </div>)
