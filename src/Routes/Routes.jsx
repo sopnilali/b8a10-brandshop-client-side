@@ -21,7 +21,7 @@ const Routes = createBrowserRouter( [
         {
           path:'/',
           element:<Home/>,
-          loader:()=> fetch('http://localhost:5000/products/')
+          loader:()=> fetch('https://mobilemaya-server-side.vercel.app/products/')
         }
       ]
     },
@@ -31,17 +31,17 @@ const Routes = createBrowserRouter( [
             {
               path:'/brands',
               element:<Brands />,
-              loader: ()=> fetch(`http://localhost:5000/brands`)
+              loader: ()=> fetch(`https://mobilemaya-server-side.vercel.app/brands`)
             },
             {
               path:'/products/:name',
               element:<SingleProduct />,
-              loader:({params}) => fetch(`http://localhost:5000/products/${params.name}`)
+              loader:({params}) => fetch(`https://mobilemaya-server-side.vercel.app/products/${params.name}`)
             },
             {
               path:'/product-details/:id',
               element:<PrivateRoutes><ProductDetails/></PrivateRoutes>,
-              loader:({params}) => fetch(`http://localhost:5000/product/${params.id}`)
+              loader:({params}) => fetch(`https://mobilemaya-server-side.vercel.app/product/${params.id}`)
             }
             
       ]
@@ -53,7 +53,7 @@ const Routes = createBrowserRouter( [
     {
       path:'/update-product/:id',
       element:<PrivateRoutes><UpdateProduct/></PrivateRoutes>,
-      loader: ({params})=> fetch(`http://localhost:5000/product/${params.id}`)
+      loader: ({params})=> fetch(`https://mobilemaya-server-side.vercel.app/product/${params.id}`)
     },
     {
       path:'/add-brands',
@@ -70,7 +70,7 @@ const Routes = createBrowserRouter( [
     {
       path:'/mycarts/:userId',
       element:<MyCart/>,
-      loader: ({params})=> fetch(`http://localhost:5000/mycarts/${params.userId}`)
+      loader: ({params})=> fetch(`https://mobilemaya-server-side.vercel.app/mycarts/${params.userId}`)
     }
 ])
 
