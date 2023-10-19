@@ -2,9 +2,14 @@ import { Link, useLoaderData } from "react-router-dom";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import { useState } from "react";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 
 const MyCart = () => {
+
+
 
     const mycarts = useLoaderData()
     console.log(mycarts);
@@ -18,9 +23,12 @@ const MyCart = () => {
         .then((res) => res.json())
         .then(data => {
             console.log(data);
+
             if( data.deletedCount > 0 ) {
-                const remaining = Data.filter(product => product._id !== _id)
-                setData(remaining);
+              toast.success('Cart deleted successfully')
+              const remaining = Data.filter(product => product._id !== _id)
+              setData(remaining);
+              
             }
         })
     }
@@ -56,6 +64,7 @@ const MyCart = () => {
 </table>
         <Footer></Footer>
         </div>
+        <ToastContainer/>
         </>
     );
 };

@@ -1,12 +1,19 @@
 import React from 'react';
-import Header from '../Header';
-import Footer from '../Footer';
 import { Link, useLoaderData } from 'react-router-dom';
+import AOS from 'aos'; 
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 
 const Brands = () => {
 
     const allbrand = useLoaderData()
     console.log(allbrand);
+
+    useEffect(() => {
+        AOS.init();
+      }, [])
+
+
     return (
         <>
 <div className='max-w-7xl mx-auto'>
@@ -20,7 +27,7 @@ const Brands = () => {
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 my-4 items-center">
                 {
                     allbrand.map( brands =>
-                       <div className='border m-2 px-2 py-2'>
+                       <div data-aos="flip-up"  className='border m-2 px-2 py-2'>
                        <Link to={`/products/${brands.brandName}`}><img className='hover:scale-90 transition-all' src={brands.purl} alt="" /></Link>
                        <Link to={`/products/${brands.brandName}`}><h2 className=' hover:underline text-lg text-center capitalize'>{brands.brandName}</h2></Link>
                        </div>

@@ -1,8 +1,17 @@
 import { Outlet } from "react-router-dom";
 import Footer from "../Footer";
 import Header from "../Header";
+import AOS from 'aos'; 
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 
 const ProductsRoot = () => {
+
+    useEffect(() => {
+        AOS.init();
+      }, [])
+
+
     return (
         <>
         <div className='max-w-7xl mx-auto'>
