@@ -12,6 +12,7 @@ import PrivateRoutes from './PrivateRoutes';
 import Login from '../pages/Login/Login';
 import Register from '../pages/Register/Register';
 import MyCart from '../pages/MyCart/MyCart';
+import Products from '../components/Products/Products';
 
 const Routes = createBrowserRouter( [
     {
@@ -28,6 +29,11 @@ const Routes = createBrowserRouter( [
     {
       element:<ProductsRoot />,
       children: [
+            {
+              path:'/products',
+              element:<Products />,
+              loader: ()=> fetch(`https://mobilemaya-server-side.vercel.app/products`)
+            },
             {
               path:'/brands',
               element:<Brands />,
@@ -69,7 +75,7 @@ const Routes = createBrowserRouter( [
     },
     {
       path:'/mycarts/:userId',
-      element:<MyCart/>,
+      element:<PrivateRoutes><MyCart/></PrivateRoutes>,
       loader: ({params})=> fetch(`https://mobilemaya-server-side.vercel.app/mycarts/${params.userId}`)
     }
 ])
