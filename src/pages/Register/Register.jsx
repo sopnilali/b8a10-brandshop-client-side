@@ -14,23 +14,31 @@ const Register = () => {
 
     const handleRegister = (e)=>{
         e.preventDefault();
-
         const username = e.target.username.value
         const email = e.target.email.value
         const userImage =  e.target.userImage.value
         const password = e.target.password.value
         const AcceptTerms = e.target.terms.checked
-        const userdata = {username, email, userImage, password, AcceptTerms}
         e.target.reset();
-        if(!AcceptTerms){
+
+        if (password.length < 6 ){
+          return toast.error("Password should be at least 6 characters or longer..");
+        }
+        else if (!/[A-Z]/.test(password)){
+          return toast.error('Do not have a capital letter');
+        }
+        else if (!/[>!#@$%&?"<]/.test(password))
+        {
+          return toast.error('Do not have a special character');
+        }
+        else if(!AcceptTerms){
             return toast.warning('Please accept terms before registering')
         }
 
         createUser(email, password)
         .then(result => {
-            console.log(result.user);
+          navigate("/")
             e.target.form.reset();
-            navigate("/")
             updateProfile(result.user, {
                 displayName:username,
                 photoURL:userImage
@@ -78,7 +86,7 @@ const Register = () => {
               ></TEInput>
               {/* <!-- Email input --> */}
               <TEInput
-                type="email"
+                type="text"
                 name="email"
                 label="Email address"
                 size="lg"

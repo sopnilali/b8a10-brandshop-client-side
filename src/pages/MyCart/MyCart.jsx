@@ -9,11 +9,7 @@ import useAuth from "../../hooks/useAuth";
 
 
 const MyCart = () => {
-
-  const { user } = useAuth()
-
-  const cartdata = useLoaderData()
-  console.log(cartdata);
+const cartdata = useLoaderData()
 
     const [Data, setData] = useState(cartdata);
 
@@ -23,7 +19,6 @@ const MyCart = () => {
         })
         .then((res) => res.json())
         .then(data => {
-            console.log(data);
 
             if( data.deletedCount > 0 ) {
               toast.success('Cart deleted successfully')

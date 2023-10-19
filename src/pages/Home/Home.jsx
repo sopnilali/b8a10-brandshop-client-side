@@ -24,12 +24,11 @@ const Home = () => {
                     <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 my-4 mx-2 '>
                     {
                         allproducts.map( product => <>
-                        <div 
+                        <div key={product._id}
                         data-aos="flip-left"
                         data-aos-easing="ease-out-cubic"
                         data-aos-duration="1000"
-                        
-                        
+
                         className='border shadow-md rounded-md mt-4  '>
                            <div className='hover:underline'>
                            <Link to={`/product-details/${product?._id}`}> <img className='hover:scale-90  transition-all mt-4' src={product?.purl} alt={product?.productName} title={product?.productName} /></Link>

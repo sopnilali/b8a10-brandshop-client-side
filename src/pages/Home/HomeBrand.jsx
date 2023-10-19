@@ -24,7 +24,7 @@ const HomeBrand = () => {
                         <div  className="grid h-auto grid-cols-2 md:grid-cols-3 my-4 items-center">
                         {
                             Brands.map( brands =>
-                               <div 
+                               <div key={brands._id}
                                data-aos="flip-up"
                                
                                className='border shadow-md rounded-md m-2 px-2 py-2'>
