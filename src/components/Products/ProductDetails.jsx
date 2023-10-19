@@ -48,26 +48,26 @@ const ProductDetails = () => {
                 <div className="overflow-x-auto ">
   <table className="table border mb-5">
     <thead >
-      <tr>
+      <tr className='border-b transition duration-300 ease-in-out hover:bg-neutral-100 dark:border-neutral-500 dark:hover:bg-neutral-600' >
         <th className='border-r-2 outline-none'>Name</th>
         <td className='font-mono capitalize'>{productDetails.productName}</td>
       </tr>
-      <tr>
+      <tr className='border-b transition duration-300 ease-in-out hover:bg-neutral-100 dark:border-neutral-500 dark:hover:bg-neutral-600'>
         <th className='border-r-2 outline-none'>Brand</th>
         <td className='font-mono capitalize'><Link className='hover:text-red-600 ' to={`/products/${productDetails.brandName}`}>{productDetails.brandName}</Link></td>
       </tr>
-      <tr>
+      <tr className='border-b transition duration-300 ease-in-out hover:bg-neutral-100 dark:border-neutral-500 dark:hover:bg-neutral-600'>
         <th className='border-r-2 outline-none'>Type</th>
         <td className='font-mono capitalize'>{productDetails.types}</td>
       </tr>
-      <tr>
+      <tr className='border-b transition duration-300 ease-in-out hover:bg-neutral-100 dark:border-neutral-500 dark:hover:bg-neutral-600'>
         <th className='border-r-2 outline-none'>Rating</th>
         <td className='font-mono capitalize'>{productDetails.rating}</td>
       </tr>
-      <tr>
+      <tr className='border-b transition duration-300 ease-in-out hover:bg-neutral-100 dark:border-neutral-500 dark:hover:bg-neutral-600'>
         <th className='border-r-2 outline-none '>Price</th>
         <td className='font-mono capitalize'>BDT {productDetails.price}</td>
-      </tr>
+      </tr >
     </thead>
   </table>
 </div>

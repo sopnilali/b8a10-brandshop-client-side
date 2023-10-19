@@ -1,22 +1,33 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import SocialLogin from "./SocialLogin";
+import { TEInput, TERipple } from "tw-elements-react";
+import { useState } from "react";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
 
   const { user, loginUser } = useAuth()
+  const navigate = useNavigate();
+  const [show, setShow] = useState(false);
 
   const handleLogin = (e) => {
     e.preventDefault();
-    const email = e.target.email.value
-    const password = e.target.password.value
+    const form = e.target.form
+    const email = form.email.value
+    const password = form.password.value
     console.log(email,password);
 
     loginUser(email, password)
     .then(result => {
+      e.target.form.reset();
+      navigate("/")
+      toast("Login successfully!!");
       console.log(result.user);
+
     })
     .catch(err => {
       console.log(err);
@@ -28,38 +39,74 @@ const Login = () => {
         <>
 <div className='max-w-7xl mx-auto'>
         <Header></Header>
-<div className="hero min-h-screen bg-base-200">
-  <div className=" flex-col lg:flex-row-reverse">
-    <div className="text-center my-5  lg:text-left">
-      <h1 className="text-5xl font-bold">Login now!</h1>
-    </div>
-    <div className="card flex-shrink-0 w-full max-w-lg shadow-2xl bg-base-100">
-      <form onSubmit={handleLogin} className="card-body">
-        <div className="form-control">
-          <label className="label">
-            <span className="label-text">Email</span>
-          </label>
-          <input type="email" placeholder="Enter your email.." name="email" className="input input-bordered" required />
+  <section className="">
+      <div className="h-full">
+        {/* <!-- Left column container with background--> */}
+        <div className="g-6 flex h-full flex-wrap items-center justify-center lg:justify-between">
+          <div className="shrink-1 mb-12 grow-0 basis-auto md:mb-0 md:w-9/12 md:shrink-0 lg:w-6/12 xl:w-6/12">
+            <img
+              src="https://tecdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+              className="w-full"
+              alt="Sample image"
+            />
+          </div>
+
+          {/* <!-- Right column container --> */}
+          <div className="mb-12 md:mb-0 md:w-8/12 lg:w-5/12 xl:w-5/12">
+            <form onClick={handleLogin}>
+
+              {/* <!-- Email input --> */}
+              <TEInput
+                type='email'
+                name='email'
+                label="Email address"
+                size="lg"
+                className="mb-6"
+              ></TEInput>
+
+              {/* <!--Password input--> */}
+              <TEInput
+                type='password'
+                label="Password"
+                name='password'
+                className="mb-6"
+                size="lg"
+              ></TEInput>
+
+              {/* <!-- Login button --> */}
+              <div className="text-center lg:text-left">
+                <TERipple rippleColor="light">
+                  <button
+                    type="button"
+                    className="inline-block rounded bg-primary px-7 pb-2.5 pt-3 text-sm font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
+                  >
+                    Login
+                  </button>
+                </TERipple>
+
+                {/* <!-- Register link --> */}
+                <p className="mb-0 mt-2 pt-1 text-sm font-semibold">
+                  Don't have an account?{" "}
+                  <Link to='/register' className="text-danger transition duration-150 ease-in-out hover:text-danger-600 focus:text-danger-600 active:text-danger-700">Register</Link>
+                </p>
+                              {/* <!-- Separator between social media sign in and email/password sign in --> */}
+              <div className="my-4 flex items-center before:mt-0.5 before:flex-1 before:border-t before:border-neutral-300 after:mt-0.5 after:flex-1 after:border-t after:border-neutral-300">
+                <p className="mx-4 mb-0 text-center font-semibold dark:text-white">
+                  Or
+                </p>
+              </div>
+              <SocialLogin></SocialLogin>
+              </div>
+            </form>
+          </div>
         </div>
-        <div className="form-control">
-          <label className="label">
-            <span className="label-text">Password</span>
-          </label>
-          <input type="password" placeholder="Enter your password.." name="password" className="input input-bordered" required />
-        </div>
-        <div className="form-control mt-2">
-          <button className="btn btn-secondary btn-sm ">Login</button>
-          <p className="mt-3">Create a new account <Link className="link-success font-semibold"  to="/register">Register</Link></p>
-        </div>
-      </form>
-      <div className="mx-4 -mt-5 mb-5">
-      <SocialLogin></SocialLogin>
       </div>
-    </div>
-  </div>
-  </div> 
+    </section>
+
   <Footer></Footer>
 </div>
+
+
 
         </>
     );

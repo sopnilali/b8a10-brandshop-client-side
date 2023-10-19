@@ -21,7 +21,7 @@ const Home = () => {
                         <HomeBrand></HomeBrand>
                         <h2 className='text-4xl font-semibold'>Latest Products</h2>
                     </div>
-                    <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 my-4 '>
+                    <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 my-4 mx-2 '>
                     {
                         allproducts.map( product => <>
                         <div 
@@ -30,15 +30,15 @@ const Home = () => {
                         data-aos-duration="1000"
                         
                         
-                        className='border mt-4 mr-2 '>
+                        className='border shadow-md rounded-md mt-4  '>
                            <div className='hover:underline'>
-                           <Link to={`/product-details/${product?._id}`}> <img src={product?.purl} alt="" /></Link>
-                           <Link to={`/product-details/${product?._id}`}><h2 className='text-center'>{product?.productName}</h2></Link>
+                           <Link to={`/product-details/${product?._id}`}> <img className='hover:scale-90  transition-all mt-4' src={product?.purl} alt={product?.productName} title={product?.productName} /></Link>
+                           <Link to={`/product-details/${product?._id}`}><h2 className='text-center text-lg font-semibold'>{product?.productName}</h2></Link>
                            </div>
-                           <h2 className='text-center'>BDT {product?.price}</h2>
-                            <div className='flex gap-4 my-2 justify-center'>
-                            <Link to={`/product-details/${product?._id}`}> <button className='btn btn-xs '>Details</button></Link>
-                            <Link to={`/update-product/${product?._id}`}><button className='btn btn-xs '>Update</button></Link>
+                           <h2 className='text-center mt-3 text-secondary'>BDT {product?.price}</h2>
+                            <div className='flex flex-col md:flex-row gap-4 mb-5 mt-2 items-center justify-center'>
+                            <Link to={`/product-details/${product?._id}`}> <button className='btn rounded-md md:px-3 btn-sm md:btn-sm btn-primary text-white '>Details</button></Link>
+                            <Link to={`/update-product/${product?._id}`}><button className='btn rounded-md md:px-3 btn-sm md:btn-sm '>Update</button></Link>
                             </div>
                         </div>
                         </>)

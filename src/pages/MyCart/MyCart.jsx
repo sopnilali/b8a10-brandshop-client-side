@@ -38,7 +38,7 @@ const MyCart = () => {
         <div className="max-w-7xl mx-auto">
         <Header></Header>
         <table className=" table">
-  <thead>
+  <thead className=" bg-neutral-800 font-medium text-white dark:border-neutral-500 dark:bg-neutral-900">
     <tr>
       <th>Product Image</th>
       <th>Product Name</th>
@@ -49,7 +49,8 @@ const MyCart = () => {
   </thead>
   <tbody>
     {
-      Data.length > 0 ?  Data.map( carts => <tr>
+      Data.length > 0 ?  Data.map( carts => 
+      <tr className="border-b transition duration-300 ease-in-out hover:bg-neutral-100 dark:border-neutral-500 dark:hover:bg-neutral-600">
             <td><Link to={`/product-details/${carts.productID}`}><img className="w-[50px]" src={carts.productImage} alt="" /></Link></td>
             <td className="capitalize"><Link className="hover:text-emerald-600" to={`/product-details/${carts.productID}`}>{carts.productName}</Link></td>
             <td className="capitalize "><Link className="hover:text-emerald-600" to={`/products/${carts.brandname}`}>{carts.brandname}</Link></td>

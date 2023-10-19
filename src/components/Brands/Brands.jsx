@@ -3,6 +3,7 @@ import { Link, useLoaderData } from 'react-router-dom';
 import AOS from 'aos'; 
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
+import {Helmet} from "react-helmet";
 
 const Brands = () => {
 
@@ -16,6 +17,9 @@ const Brands = () => {
 
     return (
         <>
+            <Helmet>
+            <title> Mobile Brands in Bangladesh</title>
+            </Helmet>
 <div className='max-w-7xl mx-auto'>
         <div className='grid grid-cols-1 '>
             <div className='my-5'>

@@ -11,7 +11,6 @@ import UpdateProduct from '../components/Products/UpdateProduct';
 import PrivateRoutes from './PrivateRoutes';
 import Login from '../pages/Login/Login';
 import Register from '../pages/Register/Register';
-import Demo from '../Demo';
 import MyCart from '../pages/MyCart/MyCart';
 
 const Routes = createBrowserRouter( [
@@ -67,10 +66,6 @@ const Routes = createBrowserRouter( [
     {
       path:'/register',
       element:<Register/>
-    },
-    {
-      path:'/demo',
-      element:<Demo/>
     },
     {
       path:'/mycarts',
