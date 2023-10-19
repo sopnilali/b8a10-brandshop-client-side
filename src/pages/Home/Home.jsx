@@ -1,9 +1,5 @@
-
-import { Link, Outlet, useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
-import LeftBar from '../../shared/Leftbar';
-import { useState } from 'react';
-import Brands from '../../components/Brands/Brands';
 import HomeBrand from './HomeBrand';
 import Banner from '../../components/Banner/Banner';
 
