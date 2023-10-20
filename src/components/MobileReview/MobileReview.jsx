@@ -7,10 +7,12 @@ const MobileReview = () => {
     const [reviews, setReviews] = useState([])
 
     useEffect(()=> {
-        fetch('mobilemaya-server-side.vercel.app/reviews')
+        fetch('https://mobilemaya-server-side.vercel.app/reviews')
         .then(res => res.json())
         .then(data =>setReviews(data))
     } ,[])
+
+    console.log(reviews);
 
     return (
         <>
