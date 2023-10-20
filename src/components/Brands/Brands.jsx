@@ -27,12 +27,12 @@ const Brands = () => {
 
                 <h2 className='text-3xl font-semibold mt-4 text-center'>All Brand List</h2>
                 </div>
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 my-4 items-center">
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-2 lg:grid-cols-4 my-4 items-center">
                 {
                     allbrand.map( brands =>
                        <div
   
-                        data-aos="flip-up"  className='border m-2 px-2 py-2'>
+                        data-aos="flip-up"  className='border hover:shadow-none shadow-md rounded-md px-2 py-2'>
                        <Link to={`/products/${brands.brandName}`}><img className='hover:scale-90 transition-all' src={brands.purl} alt="" /></Link>
                        <Link to={`/products/${brands.brandName}`}><h2 className=' hover:underline text-lg text-center capitalize'>{brands.brandName}</h2></Link>
                        </div>

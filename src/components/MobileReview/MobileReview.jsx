@@ -16,7 +16,7 @@ const MobileReview = () => {
 
     return (
         <>
-          <div class="py-4 px-4 mx-auto max-w-screen-xl ">
+          <div class="py-4  mx-auto max-w-screen-xl ">
       <div class="mx-auto max-w-screen-sm text-center mb-8">
           <h2 class="mb-2 text-3xl lg:text-4xl tracking-tight font-semibold text-gray-900 dark:text-white">Mobile Review</h2>
       </div> 
@@ -28,7 +28,7 @@ const MobileReview = () => {
                 data-aos-easing="ease-out-cubic"
                 data-aos-duration="1000"
                 
-                class="p-6 hover:shadow-none bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+                class=" p-6 hover:shadow-none bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
                 <div class="flex justify-between items-center  text-gray-500">
                 <Link to={`/products/${review.brandName}`}><span class="bg-primary-100 capitalize hover:link-secondary cursor-pointer text-primary-800 text-base font-semibold inline-flex items-center px-2.5 py-0.5 rounded dark:bg-primary-200 dark:text-primary-800">
                             {review.brandName}
