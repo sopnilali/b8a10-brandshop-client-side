@@ -32,9 +32,9 @@ const Brands = () => {
                     allbrand.map( brands =>
                        <div
   
-                        data-aos="flip-up"  className='border hover:shadow-none shadow-md rounded-md px-2 py-2'>
-                       <Link to={`/products/${brands.brandName}`}><img className='hover:scale-90 transition-all' src={brands.purl} alt="" /></Link>
-                       <Link to={`/products/${brands.brandName}`}><h2 className=' hover:underline text-lg text-center capitalize'>{brands.brandName}</h2></Link>
+                        data-aos="flip-up"  className='border hover:shadow-none hover:underline shadow-md rounded-md px-2 py-2'>
+                       <Link to={`/products/${brands.brandName}`}><img className='scale-90 transition-all' src={brands.purl} alt="" /></Link>
+                       <Link to={`/products/${brands.brandName}`}><h2 className=' text-lg text-center capitalize'>{brands.brandName}</h2></Link>
                        </div>
                         )
                 }

@@ -33,7 +33,7 @@ const Home = () => {
 
                         className='border hover:shadow-none shadow-md  rounded-md mt-4  '>
                            <div className='hover:underline'>
-                           <Link to={`/product-details/${product?._id}`}> <img className='hover:scale-90  transition-all mt-4' src={product?.purl} alt={product?.productName} title={product?.productName} /></Link>
+                           <Link to={`/product-details/${product?._id}`}> <img className='scale-90  transition-all mt-4' src={product?.purl} alt={product?.productName} title={product?.productName} /></Link>
                            <Link to={`/product-details/${product?._id}`}><h2 className='text-center text-lg font-semibold'>{product?.productName}</h2></Link>
                            </div>
                            <h2 className='text-center mt-3 text-secondary'>BDT {product?.price}</h2>
