@@ -5,16 +5,15 @@ import Footer from '../components/Footer';
 import AOS from 'aos'; 
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
-
+import { useState } from 'react';
 const Root = () => {
 
     useEffect(() => {
         AOS.init();
       }, [])
 
-
     return (
-        <div className='max-w-7xl mx-auto'>
+        <div className='max-w-7xl mx-auto App'>
             <Header></Header>
             <Outlet></Outlet>
             <Footer></Footer>

@@ -24,14 +24,11 @@ const Login = () => {
     loginUser(email, password)
     .then(result => {
       navigate("/")
-
       toast.success("Login successfully!!");
       console.log(result.user);
-
     })
     .catch(err => {
-      toast.warning("Please valid email and password!!");
-      console.log(err);
+      toast.warning(err.message);
     })
 
   }

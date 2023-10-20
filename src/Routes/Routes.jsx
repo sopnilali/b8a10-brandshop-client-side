@@ -13,11 +13,13 @@ import Login from '../pages/Login/Login';
 import Register from '../pages/Register/Register';
 import MyCart from '../pages/MyCart/MyCart';
 import Products from '../components/Products/Products';
+import ErrorPage from '../pages/ErrorPage/ErrorPage';
 
 const Routes = createBrowserRouter( [
     {
       path:'/',
       element: <Root />,
+      errorElement:<ErrorPage></ErrorPage>,
       children: [
         {
           path:'/',
@@ -28,25 +30,30 @@ const Routes = createBrowserRouter( [
     },
     {
       element:<ProductsRoot />,
+      errorElement:<ErrorPage />,
       children: [
             {
               path:'/products',
               element:<Products />,
+              errorElement:<ErrorPage />,
               loader: ()=> fetch(`https://mobilemaya-server-side.vercel.app/products`)
             },
             {
               path:'/brands',
               element:<Brands />,
+              errorElement:<ErrorPage />,
               loader: ()=> fetch(`https://mobilemaya-server-side.vercel.app/brands`)
             },
             {
               path:'/products/:name',
               element:<SingleProduct />,
+              errorElement:<ErrorPage />,
               loader:({params}) => fetch(`https://mobilemaya-server-side.vercel.app/products/${params.name}`)
             },
             {
               path:'/product-details/:id',
               element:<PrivateRoutes><ProductDetails/></PrivateRoutes>,
+              errorElement:<ErrorPage />,
               loader:({params}) => fetch(`https://mobilemaya-server-side.vercel.app/product/${params.id}`)
             }
             
@@ -54,28 +61,34 @@ const Routes = createBrowserRouter( [
     },
     {
       path:'/add-products',
-      element:<PrivateRoutes><AddProduct/></PrivateRoutes>
+      element:<PrivateRoutes><AddProduct/></PrivateRoutes>,
+      errorElement:<ErrorPage />
     },
     {
       path:'/update-product/:id',
       element:<PrivateRoutes><UpdateProduct/></PrivateRoutes>,
+      errorElement:<ErrorPage />,
       loader: ({params})=> fetch(`https://mobilemaya-server-side.vercel.app/product/${params.id}`)
     },
     {
       path:'/add-brands',
-      element:<PrivateRoutes><AddBrand/></PrivateRoutes>
+      element:<PrivateRoutes><AddBrand/></PrivateRoutes>,
+      errorElement:<ErrorPage />
     },
     {
       path:'/login',
-      element:<Login/>
+      element:<Login/>,
+      errorElement:<ErrorPage />
     },
     {
       path:'/register',
-      element:<Register/>
+      element:<Register/>,
+      errorElement:<ErrorPage />
     },
     {
       path:'/mycarts/:userId',
       element:<PrivateRoutes><MyCart/></PrivateRoutes>,
+      errorElement:<ErrorPage />,
       loader: ({params})=> fetch(`https://mobilemaya-server-side.vercel.app/mycarts/${params.userId}`)
     }
 ])

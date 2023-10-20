@@ -1,0 +1,30 @@
+/* src/components/HomePage.css */
+.App {
+    text-align: center;
+    transition: background 0.5s, color 0.5s;
+  }
+  
+  .App.light {
+    background: #ffffff;
+    color: #000000;
+  }
+  
+  .App.dark {
+    background: #121212;
+    color: #ffffff;
+  }
+  
+  header {
+    background: #333;
+    padding: 20px;
+  }
+  
+  button {
+    background: #007acc;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  

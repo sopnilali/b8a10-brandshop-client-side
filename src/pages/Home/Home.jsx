@@ -2,15 +2,15 @@ import { Link, useLoaderData } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import HomeBrand from './HomeBrand';
 import Banner from '../../components/Banner/Banner';
+import { useState } from 'react';
 
 const Home = () => {
 
     const {user}= useAuth()
     console.log(user);
     const allproducts = useLoaderData()
-
     return (
-        <div>
+        <div className="App">
            <div className='grid grid-cols-1 md:grid-cols-3 gap-5'>
                 {/* <div className=' flex-1'>
                     <LeftBar></LeftBar>

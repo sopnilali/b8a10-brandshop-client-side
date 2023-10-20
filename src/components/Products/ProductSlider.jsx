@@ -46,7 +46,7 @@ const ProductSlider = () => {
                                 <SwiperSlide>
                                <div className='m-2 px-2 py-2'>
                                <div className='flex justify-center'>
-                               <img className=' min-h-fit w-fit' src={slider.ads_img} alt="" />
+                               <img className=' md:w-3/6 md:h-full' src={slider.ads_img} alt="" />
                                </div>
                                </div>
                                </SwiperSlide>
