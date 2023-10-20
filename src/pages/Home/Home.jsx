@@ -3,6 +3,8 @@ import useAuth from '../../hooks/useAuth';
 import HomeBrand from './HomeBrand';
 import Banner from '../../components/Banner/Banner';
 import { useState } from 'react';
+import MobileNews from '../../components/MobileReview/MobileReview';
+import MobileReview from '../../components/MobileReview/MobileReview';
 
 const Home = () => {
 
@@ -43,6 +45,7 @@ const Home = () => {
                         </>)
                     }
                     </div>
+                    <MobileReview/>
                 </div>
 
             </div>
