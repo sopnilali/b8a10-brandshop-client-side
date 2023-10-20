@@ -36,7 +36,7 @@ const SingleProduct = () => {
                             <div data-aos="flip-up" className='border hover:shadow-none shadow-md rounded-md mt-4 ml-0 '>
                                 <div className='hover:underline'>
                                 <Link to={`/product-details/${product?._id}`}><img className='scale-90 mt-4 transition-all' src={product?.purl} alt={product?.productName} title={product?.productName} /></Link>
-                                <Link to={`/product-details/${product?._id}`}><h2 className='text-center text-lg font-semibold'>{product?.productName}</h2></Link>
+                                <Link to={`/product-details/${product?._id}`}><h2 className='text-center scale-90 text-lg font-semibold'>{product?.productName}</h2></Link>
                                 </div>
                                 <h2 className='text-center mt-3 text-secondary'>BDT {product?.price}</h2>
                                 <div className='flex flex-col md:flex-row items-center gap-4 mb-5 mt-2 justify-center'>
