@@ -14,6 +14,7 @@ import Register from '../pages/Register/Register';
 import MyCart from '../pages/MyCart/MyCart';
 import Products from '../components/Products/Products';
 import ErrorPage from '../pages/ErrorPage/ErrorPage';
+import MobileReview from '../components/MobileReview/MobileReview';
 
 const Routes = createBrowserRouter( [
     {
@@ -90,7 +91,7 @@ const Routes = createBrowserRouter( [
       element:<PrivateRoutes><MyCart/></PrivateRoutes>,
       errorElement:<ErrorPage />,
       loader: ({params})=> fetch(`https://mobilemaya-server-side.vercel.app/mycarts/${params.userId}`)
-    }
+    },
 ])
 
 export default Routes;
