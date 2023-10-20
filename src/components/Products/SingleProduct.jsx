@@ -35,7 +35,7 @@ const SingleProduct = () => {
                       singleproduct.length > 0 ?  singleproduct.map( product =>
                             <div data-aos="flip-up" className='border hover:shadow-none shadow-md rounded-md mt-4 ml-0 '>
                                 <div className='hover:underline'>
-                                <Link to={`/product-details/${product?._id}`}><img className='hover:scale-90 mt-4 transition-all' src={product?.purl} alt={product?.productName} title={product?.productName} /></Link>
+                                <Link to={`/product-details/${product?._id}`}><img className='scale-90 mt-4 transition-all' src={product?.purl} alt={product?.productName} title={product?.productName} /></Link>
                                 <Link to={`/product-details/${product?._id}`}><h2 className='text-center text-lg font-semibold'>{product?.productName}</h2></Link>
                                 </div>
                                 <h2 className='text-center mt-3 text-secondary'>BDT {product?.price}</h2>
