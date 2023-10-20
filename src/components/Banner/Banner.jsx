@@ -13,7 +13,7 @@ const Banner = () => {
       <h1 className="text-5xl font-bold">Latest Mobile Phones!</h1>
       <p className="py-6">Mobile phones have become a crucial part of our daily lives. The market is flooded with various brands that offer different features and prices. </p>
       <div >
-      <Link to="/brands"><button className="btn btn-primary">All Brands</button></Link>
+      <Link to="/brands"><button className=" py-3 rounded-md text-white px-4 text-sm bg-violet-700 outline-none">All Brands</button></Link>
       </div>
     </div>
   </div>

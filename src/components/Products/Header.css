@@ -1,4 +1,5 @@
 a.active {
   color: white;
-    background-color: red !important;
+  outline: none;
+    background-color: blueviolet !important;
   }

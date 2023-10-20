@@ -31,15 +31,15 @@ const Home = () => {
                         data-aos-easing="ease-out-cubic"
                         data-aos-duration="1000"
 
-                        className='border shadow-md hover:shadow-none rounded-md mt-4  '>
+                        className='border hover:shadow-none shadow-md  rounded-md mt-4  '>
                            <div className='hover:underline'>
                            <Link to={`/product-details/${product?._id}`}> <img className='hover:scale-90  transition-all mt-4' src={product?.purl} alt={product?.productName} title={product?.productName} /></Link>
                            <Link to={`/product-details/${product?._id}`}><h2 className='text-center text-lg font-semibold'>{product?.productName}</h2></Link>
                            </div>
                            <h2 className='text-center mt-3 text-secondary'>BDT {product?.price}</h2>
                             <div className='flex flex-col md:flex-row gap-4 mb-5 mt-2 items-center justify-center'>
-                            <Link to={`/product-details/${product?._id}`}> <button className='btn rounded-md md:px-3 btn-sm md:btn-sm btn-primary text-white '>Details</button></Link>
-                            <Link to={`/update-product/${product?._id}`}><button className='btn rounded-md md:px-3 btn-sm md:btn-sm '>Update</button></Link>
+                            <Link to={`/product-details/${product?._id}`}> <button className='border hover:shadow capitalize rounded-md md:px-3 btn-sm md:btn-sm bg-violet-600 hover:bg-violet-800 text-white'>Details</button></Link>
+                            <Link to={`/update-product/${product?._id}`}><button className='border hover:shadow capitalize rounded-md md:px-3 btn-sm md:btn-sm'>Update</button></Link>
                             </div>
                         </div>
                         </>)

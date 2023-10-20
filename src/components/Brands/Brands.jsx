@@ -26,7 +26,6 @@ const Brands = () => {
                 <div className='relative'>
 
                 <h2 className='text-3xl font-semibold mt-4 text-center'>All Brand List</h2>
-                <Link className=' float float-right absolute top-0 right-0 bg-slate-500 py-2 px-5 w-36 text-white rounded-md' to="/add-brands">Add Brand</Link>
                 </div>
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 my-4 items-center">
                 {
