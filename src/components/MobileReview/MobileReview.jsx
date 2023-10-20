@@ -16,7 +16,7 @@ const MobileReview = () => {
 
     return (
         <>
-          <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+          <div class="py-4 px-4 mx-auto max-w-screen-xl ">
       <div class="mx-auto max-w-screen-sm text-center mb-8">
           <h2 class="mb-2 text-3xl lg:text-4xl tracking-tight font-semibold text-gray-900 dark:text-white">Mobile Review</h2>
       </div> 
