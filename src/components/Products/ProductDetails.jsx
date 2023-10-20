@@ -43,8 +43,8 @@ const ProductDetails = () => {
             <div>
                 <form className='space-y-5' onSubmit={addToCart}>
                 <div className='block w-2/5 '>
-                <img src={productDetails.purl} alt="" />
-                <input className='btn btn-sm btn-secondary my-2' type="submit" value="Add to Cart" />
+                <img className='md:w-3/5' src={productDetails.purl} alt="" />
+                <input className='border hover:shadow capitalize rounded-md md:px-3 btn-sm md:btn-sm bg-violet-600 hover:bg-violet-800 text-white mt-4 cursor-pointer' type="submit" value="Add to Cart" />
                 </div>
                 <h2 className='text-3xl'>{productDetails.productName} Price in Bangladesh</h2>
                 <p>{productDetails.shortDes}</p>

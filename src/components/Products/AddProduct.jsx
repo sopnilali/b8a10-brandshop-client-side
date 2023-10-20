@@ -108,7 +108,7 @@ const AddProduct = () => {
           <textarea className="textarea textarea-bordered" name='shortDes' placeholder="Enter Short Details..."></textarea>
         </div>
         <div className="form-control mt-6">
-          <button className="btn bg-[#D2B48C] capitalize text-lg">Add Product</button>
+          <button className="btn btn-neutral capitalize text-lg">Add Product</button>
         </div>
       </form>
     </div>
