@@ -33,7 +33,7 @@ const SingleProduct = () => {
                     <div  className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 my-4 mx-2 '>
                     {
                       singleproduct.length > 0 ?  singleproduct.map( product =>
-                            <div data-aos="flip-up" className='border shadow-md rounded-m mt-4 ml-0 '>
+                            <div data-aos="flip-up" className='border hover:shadow-none shadow-md rounded-md mt-4 ml-0 '>
                                 <div className='hover:underline'>
                                 <Link to={`/product-details/${product?._id}`}><img className='hover:scale-90 mt-4 transition-all' src={product?.purl} alt={product?.productName} title={product?.productName} /></Link>
                                 <Link to={`/product-details/${product?._id}`}><h2 className='text-center text-lg font-semibold'>{product?.productName}</h2></Link>

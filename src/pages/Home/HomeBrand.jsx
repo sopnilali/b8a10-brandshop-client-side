@@ -27,7 +27,7 @@ const HomeBrand = () => {
                                <div key={brands._id}
                                data-aos="flip-up"
                                
-                               className='border shadow-md rounded-md m-2 px-2 py-2'>
+                               className='border hover:shadow-none shadow-md rounded-md m-2 px-2 py-2'>
                                <Link to={`/products/${brands.brandName}`}><img className='hover:scale-90 transition-all' src={brands.purl} alt="" /></Link>
                                <Link to={`/products/${brands.brandName}`}><h2 className=' font-semibold hover:text-secondary hover:underline text-lg text-center capitalize'>{brands.brandName}</h2></Link>
                                </div>
