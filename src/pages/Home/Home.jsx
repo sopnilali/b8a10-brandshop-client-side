@@ -7,9 +7,6 @@ import MobileNews from '../../components/MobileReview/MobileReview';
 import MobileReview from '../../components/MobileReview/MobileReview';
 
 const Home = () => {
-
-    const {user}= useAuth()
-    console.log(user);
     const allproducts = useLoaderData()
     return (
         <div >

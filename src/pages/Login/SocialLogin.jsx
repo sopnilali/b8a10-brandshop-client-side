@@ -13,7 +13,7 @@ const SocialLogin = () => {
         media()
         .then(res => {
             console.log(res.user);
-            toast("Login successfully!!");
+            toast.success("Login successfully!!");
             navigate("/")
         })
         .catch(err => {
