@@ -2,7 +2,8 @@
 
 import { Link, useLoaderData } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { toast } from "react-toastify";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const UpdateProduct = () => {
 
@@ -29,7 +30,7 @@ const UpdateProduct = () => {
         const rating = form.rating.value;
         const shortDes = form.shortDes.value;
         const products = {productName, brandName, types, price, purl, rating, shortDes}
-        console.log(products);
+        // console.log(products);
         
         fetch(`https://mobilemaya-server-side.vercel.app/product/${Productdata._id}`, {
           method: 'PUT',
@@ -40,9 +41,16 @@ const UpdateProduct = () => {
           })
         .then(res => res.json())
         .then(data => {
-            console.log(data);
+          console.log(data);
+          if(data.modifiedCount == 1) {
+
             toast.success('Product updated successfully')
-        })
+          }
+          else if(data.modifiedCount == 0){
+            toast.warning('Product already updated!!')
+          }
+        }
+        )
 
     }
 
@@ -119,6 +127,7 @@ const UpdateProduct = () => {
     </div>
   </div>
 </div>
+<ToastContainer />
         </div>
     );
 };

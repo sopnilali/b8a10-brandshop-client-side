@@ -51,7 +51,7 @@ const Header = () => {
     </ul>
   </div>
   <div className="navbar-end">
-  <span className='mx-5 '>{user?.displayName}</span> 
+  <span className='mx-5 '>{user?.displayName }</span> 
   {
     user? <>
     <div className="dropdown dropdown-end">
