@@ -2,6 +2,7 @@
 
 import { Link, useLoaderData } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 
 const UpdateProduct = () => {
 
@@ -40,6 +41,7 @@ const UpdateProduct = () => {
         .then(res => res.json())
         .then(data => {
             console.log(data);
+            toast.success('Product updated successfully')
         })
 
     }
