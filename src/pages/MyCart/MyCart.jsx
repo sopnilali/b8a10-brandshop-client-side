@@ -30,10 +30,10 @@ const cartdata = useLoaderData()
         <>
         <div className="max-w-7xl mx-auto">
         <Header></Header>
-        <table className=" table">
+        <table width="100%" className="  md:text-white ">
   <thead className=" bg-neutral-800 font-medium text-white dark:border-neutral-500 dark:bg-neutral-900">
-    <tr>
-      <th>Product Image</th>
+    <tr className="text-white  ">
+      <th className=" py-2">Product Image</th>
       <th>Product Name</th>
       <th>Brand Name</th>
       <th>Price</th>
@@ -43,7 +43,7 @@ const cartdata = useLoaderData()
   <tbody>
     {
       Data.length > 0 ?  Data.map( carts => 
-      <tr key={carts._id} className="border-b transition duration-300 ease-in-out hover:bg-neutral-100 dark:border-neutral-500 dark:hover:bg-neutral-600">
+      <tr key={carts._id} className="border-b text-black transition duration-300 ease-in-out hover:bg-neutral-100 dark:border-neutral-500 dark:hover:bg-neutral-600">
             <td><Link to={`/product-details/${carts.productID}`}><img className="w-[50px]" src={carts.productImage} alt="" /></Link></td>
             <td className="capitalize"><Link className="hover:text-emerald-600" to={`/product-details/${carts.productID}`}>{carts.productName}</Link></td>
             <td className="capitalize "><Link className="hover:text-emerald-600" to={`/products/${carts.brandname}`}>{carts.brandname}</Link></td>
