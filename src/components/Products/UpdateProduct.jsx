@@ -78,11 +78,13 @@ const UpdateProduct = () => {
             <span className="label-text">Brand Name</span>
           </label>
           <select className="input input-bordered" name="brandName" id="">
-            {
-              allbrand.map (brand => 
-                <option key={brand._id} className="capitalize" value={brand.brandName}><p>{brand.brandName}</p></option>
-            )
-            }
+          <option className="capitalize" value={Productdata.brandName}><p>{Productdata.brandName}</p></option>
+          {
+            allbrand.map(brand => 
+          <option className="capitalize" value={brand.brandName}><p>{brand.brandName}</p></option>
+
+              )
+          }
           </select>
         </div>
         <div className="form-control">
