@@ -8,7 +8,7 @@ const HomeBrand = () => {
     const [Brands, setBrands] = useState([])
 
     useEffect(()=> {
-        fetch('http://localhost:5000/brands/')
+        fetch('https://mobilemaya-server-side.vercel.app/brands/')
         .then(res => res.json())
         .then(data => setBrands(data))
     } ,[])

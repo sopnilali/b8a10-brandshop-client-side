@@ -11,7 +11,7 @@ const AddBrand = () => {
         const purl = form.purl.value;
         const brands = {brandName, purl};
         console.log(brands);
-        fetch('http://localhost:5000/brands', {
+        fetch('https://mobilemaya-server-side.vercel.app/brands', {
           mode: 'cors',
           credentials: 'include',
           method: 'POST',
