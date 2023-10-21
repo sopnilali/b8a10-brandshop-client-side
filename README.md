@@ -1,8 +1,9 @@
-# React + Vite
+Our Project Main Features:
+1. Two extra sections have been added to the home page. For example, Latest Product and Mobile Review
+2. Extra Login Features have been added.
+3. You must login to view product details. Otherwise you will be taken to login page.
+4. When different products are added to the cart, the user based carts will be displayed.
+5. If you click on your favorite brand, you will see the products of that brand separately. For example, if you click on Oppo brand, you can see all the products of Oppo.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+client-side live link : https://mobilemaya.vercel.app/

@@ -6,6 +6,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
 import { useState } from 'react';
+
 const Root = () => {
 
     useEffect(() => {
@@ -14,7 +15,9 @@ const Root = () => {
 
     return (
         <div className='max-w-7xl mx-auto '>
-            <Header></Header>
+           <div>
+           <Header></Header>
+           </div>
             <Outlet></Outlet>
             <Footer></Footer>
         </div>
