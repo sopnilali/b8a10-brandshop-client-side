@@ -12,8 +12,10 @@ const AddBrand = () => {
         const brands = {brandName, purl};
         console.log(brands);
         fetch('http://localhost:5000/brands', {
-            method: 'POST',
-            headers: {
+          mode: 'cors',
+          credentials: 'include',
+          method: 'POST',
+          headers: {
                 'content-type': 'application/json'
             },
             body: JSON.stringify(brands)

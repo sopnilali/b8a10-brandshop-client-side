@@ -28,8 +28,8 @@ const UpdateProduct = () => {
         console.log(products);
         
         fetch(`http://localhost:5000/product/${Productdata._id}`, {
-            method: 'PUT',
-            headers: {
+          method: 'PUT',
+          headers: {
               'content-type': 'application/json'
             },
             body: JSON.stringify(products)
