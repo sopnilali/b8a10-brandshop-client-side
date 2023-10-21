@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 const UpdateProduct = () => {
 
   const Productdata = useLoaderData()
+  console.log(Productdata);
 
   const [allbrand, setAllbrand] = useState([])
 
@@ -67,7 +68,7 @@ const UpdateProduct = () => {
           <select className="input input-bordered" name="brandName" id="">
             {
               allbrand.map (brand => 
-                <option className="capitalize" value={brand.brandName}><p>{brand.brandName}</p></option>
+                <option key={brand._id} className="capitalize" value={brand.brandName}><p>{brand.brandName}</p></option>
             )
             }
           </select>
