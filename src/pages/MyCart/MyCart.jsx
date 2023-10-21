@@ -32,7 +32,7 @@ const cartdata = useLoaderData()
         <Header></Header>
         <table width="100%" className="  md:text-white ">
   <thead className=" bg-neutral-800 font-medium text-white dark:border-neutral-500 dark:bg-neutral-900">
-    <tr className="text-white  ">
+    <tr className="text-white ">
       <th className=" py-2">Product Image</th>
       <th>Product Name</th>
       <th>Brand Name</th>
@@ -44,15 +44,15 @@ const cartdata = useLoaderData()
     {
       Data.length > 0 ?  Data.map( carts => 
       <tr key={carts._id} className="border-b text-black transition duration-300 ease-in-out hover:bg-neutral-100 dark:border-neutral-500 dark:hover:bg-neutral-600">
-            <td><Link to={`/product-details/${carts.productID}`}><img className="w-[50px]" src={carts.productImage} alt="" /></Link></td>
-            <td className="capitalize"><Link className="hover:text-emerald-600" to={`/product-details/${carts.productID}`}>{carts.productName}</Link></td>
+            <td ><Link to={`/product-details/${carts.productID}`}><img className="w-[50px] py-2" src={carts.productImage} alt="" /></Link></td>
+            <td className="capitalize "><Link className="hover:text-emerald-600 " to={`/product-details/${carts.productID}`}>{carts.productName}</Link></td>
             <td className="capitalize "><Link className="hover:text-emerald-600" to={`/products/${carts.brandname}`}>{carts.brandname}</Link></td>
             <td>BDT {carts.price}</td>
             <td><button onClick={()=> handleCartDelete(carts._id)} className="btn outline-none hover:bg-red-600 hover:text-white">X</button></td>
           </tr> 
 
     )
-    : <><h2 className="text-2xl">Not Available</h2></>
+    : <><h2 className="text-xl  text-black my-2">Not Available</h2></>
     }
   </tbody>
 </table>
