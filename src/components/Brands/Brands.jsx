@@ -30,7 +30,7 @@ const Brands = () => {
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-2 lg:grid-cols-4 my-4 items-center">
                 {
                     allbrand.map( brands =>
-                       <div
+                       <div key={brands._id}
   
                         data-aos="flip-up"  className='border hover:shadow-none hover:underline shadow-md rounded-md px-2 py-2'>
                        <Link to={`/products/${brands.brandName}`}><img className='scale-90 transition-all' src={brands.purl} alt="" /></Link>

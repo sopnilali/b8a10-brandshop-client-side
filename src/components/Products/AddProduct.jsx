@@ -5,6 +5,7 @@ const AddProduct = () => {
 
   const [allbrand, setAllbrand] = useState([])
 
+
   useEffect(()=> {
     fetch('https://mobilemaya-server-side.vercel.app/brands')
     .then(res => res.json())
@@ -95,11 +96,12 @@ const AddProduct = () => {
             <span className="label-text">Rating</span>
           </label>
           <select className="input input-bordered" name="rating" id="">
-            <option className="capitalize" value="low">Low</option>
+            <option className="capitalize " value="low">Low</option>
             <option className="capitalize" value="average">Average</option>
             <option className="capitalize" value="best">Best</option>
           </select>
         </div>
+        <div className="rating rating-md"></div>
         </div>
         <div className="form-control">
           <label className="label">

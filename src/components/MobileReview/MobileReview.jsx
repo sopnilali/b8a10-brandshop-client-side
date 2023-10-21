@@ -24,6 +24,7 @@ const MobileReview = () => {
           {
             reviews.map(review => 
                 <article 
+                key={review._id}
                 data-aos="flip-right"
                 data-aos-easing="ease-out-cubic"
                 data-aos-duration="1000"
