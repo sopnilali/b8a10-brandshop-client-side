@@ -14,10 +14,8 @@ const Root = () => {
       }, [])
 
     return (
-        <div className='max-w-7xl mx-auto '>
-           <div>
+        <div className='max-w-7xl mx-auto'>
            <Header></Header>
-           </div>
             <Outlet></Outlet>
             <Footer></Footer>
         </div>

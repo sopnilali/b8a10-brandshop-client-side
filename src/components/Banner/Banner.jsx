@@ -6,8 +6,8 @@ const Banner = () => {
         <div
         data-aos="zoom-in"
         data-aos-duration="500"
-         className="hero md:min-h-16 hover:shadow-none outline-none shadow-md rounded-md bg-base-200">
-  <div className="hero-content mx-10 flex-col   lg:flex-row-reverse">
+         className=" mx-2 md:min-h-16 hover:shadow-none outline-none shadow-md rounded-md bg-base-200">
+  <div className="hero-content mx-10 flex-col lg:flex-row-reverse">
     <img src="https://imgdb.net/storage/uploads/7b3a42b148f6e808e64d0323339289aafca3a101ab808dfa54000801c78ae3c0.png" className="md:max-w-xl rounded-lg " />
     <div>
       <h1 className="text-5xl font-bold">Latest Mobile Phones!</h1>

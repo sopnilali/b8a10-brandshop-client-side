@@ -20,7 +20,7 @@ const MobileReview = () => {
       <div class="mx-auto max-w-screen-sm text-center mb-8">
           <h2 class="mb-2 text-3xl lg:text-4xl tracking-tight font-semibold text-gray-900 dark:text-white">Mobile Review</h2>
       </div> 
-      <div class="grid gap-4 lg:grid-cols-2">
+      <div class="grid gap-4 mx-2 lg:grid-cols-2">
           {
             reviews.map(review => 
                 <article 
