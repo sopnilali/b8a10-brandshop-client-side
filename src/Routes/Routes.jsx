@@ -24,7 +24,7 @@ const Routes = createBrowserRouter( [
         {
           path:'/',
           element:<Home/>,
-          loader:()=> fetch('https://mobilemaya-server-side.vercel.app/products/')
+          loader:()=> fetch('http://localhost:5000/products/')
         }
       ]
     },
@@ -36,25 +36,25 @@ const Routes = createBrowserRouter( [
               path:'/products',
               element:<Products />,
               errorElement:<ErrorPage />,
-              loader: ()=> fetch(`https://mobilemaya-server-side.vercel.app/products`)
+              loader: ()=> fetch(`http://localhost:5000/products`)
             },
             {
               path:'/brands',
               element:<Brands />,
               errorElement:<ErrorPage />,
-              loader: ()=> fetch(`https://mobilemaya-server-side.vercel.app/brands`)
+              loader: ()=> fetch(`http://localhost:5000/brands`)
             },
             {
               path:'/products/:name',
               element:<SingleProduct />,
               errorElement:<ErrorPage />,
-              loader:({params}) => fetch(`https://mobilemaya-server-side.vercel.app/products/${params.name}`)
+              loader:({params}) => fetch(`http://localhost:5000/products/${params.name}`)
             },
             {
               path:'/product-details/:id',
               element:<PrivateRoutes><ProductDetails/></PrivateRoutes>,
               errorElement:<ErrorPage />,
-              loader:({params}) => fetch(`https://mobilemaya-server-side.vercel.app/product/${params.id}`)
+              loader:({params}) => fetch(`http://localhost:5000/product/${params.id}`)
             }
             
       ]
@@ -68,7 +68,7 @@ const Routes = createBrowserRouter( [
       path:'/update-product/:id',
       element:<PrivateRoutes><UpdateProduct/></PrivateRoutes>,
       errorElement:<ErrorPage />,
-      loader: ({params})=> fetch(`https://mobilemaya-server-side.vercel.app/product/${params.id}`)
+      loader: ({params})=> fetch(`http://localhost:5000/product/${params.id}`)
     },
     {
       path:'/add-brands',
@@ -89,7 +89,7 @@ const Routes = createBrowserRouter( [
       path:'/mycarts/:userId',
       element:<PrivateRoutes><MyCart/></PrivateRoutes>,
       errorElement:<ErrorPage />,
-      loader: ({params})=> fetch(`https://mobilemaya-server-side.vercel.app/mycarts/${params.userId}`)
+      loader: ({params})=> fetch(`http://localhost:5000/mycarts/${params.userId}`)
     },
 ])
 
