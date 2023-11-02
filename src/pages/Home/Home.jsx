@@ -1,21 +1,19 @@
 import { Link, useLoaderData } from 'react-router-dom';
-import { useQuery } from '@tanstack/react-query';
-import useAuth from '../../hooks/useAuth';
 import HomeBrand from './HomeBrand';
 import Banner from '../../components/Banner/Banner';
-import { useState } from 'react';
 import MobileReview from '../../components/MobileReview/MobileReview';
 
 const Home = () => {
-    const [page, setPage] = useState(0);
+    const allproducts = useLoaderData()
+    // const [page, setPage] = useState(0);
 
-    const {data:{result, postCount}} = useQuery({
-        queryKey: ['products', page],
-        queryFn: () => fetch(`https://mobilemaya-server-side.vercel.app/products?page=${page}`).then((res) => res.json()),
-        initialData:{result:[], postCount:0}
-    })
-    const totalPages = Math.ceil(postCount / 10)
-    const pages = [...new Array(totalPages).fill(0)]
+    // const {data:{result, postCount}} = useQuery({
+    //     queryKey: ['products', page],
+    //     queryFn: () => fetch(`https://mobilemaya-server-side.vercel.app/products?page=${page}`).then((res) => res.json()),
+    //     initialData:{result:[], postCount:0}
+    // })
+    // const totalPages = Math.ceil(postCount / 10)
+    // const pages = [...new Array(totalPages).fill(0)]
     return (
         <div >
            <div className='grid grid-cols-1 md:grid-cols-3 gap-5'>
@@ -30,7 +28,7 @@ const Home = () => {
                     </div>
                     <div className='grid grid-cols-2 md:grid-cols-3 mx-2 lg:grid-cols-5 gap-2 my-4 '>
                     {
-                        result.map( product => <>
+                        allproducts.map( product => <>
                         <div key={product._id}
                         data-aos="flip-left"
                         data-aos-easing="ease-out-cubic"
@@ -51,14 +49,14 @@ const Home = () => {
                     }
                    
                     </div>
-                    <div className=" flex justify-center items-center ">
+                    {/* <div className=" flex justify-center items-center ">
                         {pages.map(( item, index)=> 
                         <button onClick={()=> setPage(index)} 
                         className={` my-4 rounded-md btn-sm md:btn-sm ml-2 ${page == index ? " bg-violet-800 text-white" : " text-white bg-violet-600  "}  `}>
                             {index + 1}</button>
                         
                         )}
-                    </div>
+                    </div> */}
                     <MobileReview/>
                 </div>
 

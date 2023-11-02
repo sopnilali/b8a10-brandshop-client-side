@@ -5,15 +5,17 @@ import { Link, useLoaderData } from 'react-router-dom';
 
 const Products = () => {
 
-    const [page, setPage] = useState(0);
 
-    const {data:{result, postCount}} = useQuery({
-        queryKey: ['products', page],
-        queryFn: () => fetch(`https://mobilemaya-server-side.vercel.app/products?page=${page}`).then((res) => res.json()),
-        initialData:{result:[], postCount:0}
-    })
-    const totalPages = Math.ceil(postCount / 10)
-    const pages = [...new Array(totalPages).fill(0)]
+    const allproducts = useLoaderData()
+    // const [page, setPage] = useState(0);
+
+    // const {data:{result, postCount}} = useQuery({
+    //     queryKey: ['products', page],
+    //     queryFn: () => fetch(`https://mobilemaya-server-side.vercel.app/products?page=${page}`).then((res) => res.json()),
+    //     initialData:{result:[], postCount:0}
+    // })
+    // const totalPages = Math.ceil(postCount / 10)
+    // const pages = [...new Array(totalPages).fill(0)]
     
     return (
         <div>
@@ -21,7 +23,7 @@ const Products = () => {
             <div className='grid grid-cols-2 md:grid-cols-3 mt-0 lg:grid-cols-4 gap-2 my-4 mx-2 '>
                   
                     {
-                        result.map( product => <>
+                        allproducts.map( product => <>
                         <div 
                         data-aos="flip-left"
                         data-aos-easing="ease-out-cubic"
@@ -44,14 +46,14 @@ const Products = () => {
                     }
                     
                     </div>
-                    <div className=" my-6">
+                    {/* <div className=" my-6">
                         {pages.map(( item, index)=> 
                         <button onClick={()=> setPage(index)} 
                         className={` rounded-md btn-sm md:btn-sm ml-2 ${page == index ? " bg-violet-800 text-white" : " text-white bg-violet-600  "}  `}>
                             {index + 1}</button>
                         
                         )}
-                    </div>
+                    </div> */}
         </div>
     );
 };
