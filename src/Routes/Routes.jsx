@@ -23,8 +23,7 @@ const Routes = createBrowserRouter( [
       children: [
         {
           path:'/',
-          element:<Home/>,
-          loader:()=> fetch('https://mobilemaya-server-side.vercel.app/products/')
+          element:<Home/>
         }
       ]
     },
