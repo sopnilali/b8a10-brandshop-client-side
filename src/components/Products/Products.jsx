@@ -9,7 +9,7 @@ const Products = () => {
 
     const {data:{result, postCount}} = useQuery({
         queryKey: ['products', page],
-        queryFn: () => fetch(`http://localhost:5000/products?page=${page}`).then((res) => res.json()),
+        queryFn: () => fetch(`https://mobilemaya-server-side.vercel.app/products?page=${page}`).then((res) => res.json()),
         initialData:{result:[], postCount:0}
     })
     const totalPages = Math.ceil(postCount / 10)
