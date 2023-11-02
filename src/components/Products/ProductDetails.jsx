@@ -7,7 +7,7 @@ import useAuth from '../../hooks/useAuth';
 const ProductDetails = () => {
 
   const { user } = useAuth()
-  console.log();
+  console.log(user);
     const productDetails = useLoaderData()
     console.log(productDetails);
 
@@ -19,7 +19,7 @@ const ProductDetails = () => {
         const userID = user.uid
         const price = productDetails.price
         const productImage = productDetails.purl
-        const mycart = {productName,brandname,price,productImage, productID, userID }
+        const mycart = { productName, brandname, price, productImage, productID, userID }
         console.log(mycart);
 
         fetch('https://mobilemaya-server-side.vercel.app/mycarts', {

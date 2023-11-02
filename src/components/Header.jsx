@@ -11,6 +11,7 @@ const Header = () => {
 
 
   const { user, logoutUser } = useAuth()
+  console.log(user);
   
   const navigate = useNavigate()
   const navlinks = <>
