@@ -36,7 +36,6 @@ const Routes = createBrowserRouter( [
               path:'/products',
               element:<Products />,
               errorElement:<ErrorPage />,
-              loader: ()=> fetch(`https://mobilemaya-server-side.vercel.app/products`)
             },
             {
               path:'/brands',

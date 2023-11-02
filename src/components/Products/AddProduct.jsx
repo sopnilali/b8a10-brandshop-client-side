@@ -96,9 +96,9 @@ const AddProduct = () => {
             <span className="label-text">Rating</span>
           </label>
           <select className="input input-bordered" name="rating" id="">
-            <option className="capitalize " value="low">Low</option>
-            <option className="capitalize" value="average">Average</option>
-            <option className="capitalize" value="best">Best</option>
+            <option className="capitalize " value="5">5</option>
+            <option className="capitalize" value="4">4</option>
+            <option className="capitalize" value="3">3</option>
           </select>
         </div>
         <div className="rating rating-md"></div>

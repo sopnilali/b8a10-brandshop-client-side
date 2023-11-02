@@ -1,13 +1,21 @@
 import { Link, useLoaderData } from 'react-router-dom';
+import { useQuery } from '@tanstack/react-query';
 import useAuth from '../../hooks/useAuth';
 import HomeBrand from './HomeBrand';
 import Banner from '../../components/Banner/Banner';
 import { useState } from 'react';
-import MobileNews from '../../components/MobileReview/MobileReview';
 import MobileReview from '../../components/MobileReview/MobileReview';
 
 const Home = () => {
-    const allproducts = useLoaderData()
+    const [page, setPage] = useState(0);
+
+    const {data:{result, postCount}} = useQuery({
+        queryKey: ['products', page],
+        queryFn: () => fetch(`http://localhost:5000/products?page=${page}`).then((res) => res.json()),
+        initialData:{result:[], postCount:0}
+    })
+    const totalPages = Math.ceil(postCount / 10)
+    const pages = [...new Array(totalPages).fill(0)]
     return (
         <div >
            <div className='grid grid-cols-1 md:grid-cols-3 gap-5'>
@@ -22,7 +30,7 @@ const Home = () => {
                     </div>
                     <div className='grid grid-cols-2 md:grid-cols-3 mx-2 lg:grid-cols-5 gap-2 my-4 '>
                     {
-                        allproducts.map( product => <>
+                        result.map( product => <>
                         <div key={product._id}
                         data-aos="flip-left"
                         data-aos-easing="ease-out-cubic"
@@ -41,6 +49,15 @@ const Home = () => {
                         </div>
                         </>)
                     }
+                   
+                    </div>
+                    <div className=" flex justify-center items-center ">
+                        {pages.map(( item, index)=> 
+                        <button onClick={()=> setPage(index)} 
+                        className={` my-4 rounded-md btn-sm md:btn-sm ml-2 ${page == index ? " bg-violet-800 text-white" : " text-white bg-violet-600  "}  `}>
+                            {index + 1}</button>
+                        
+                        )}
                     </div>
                     <MobileReview/>
                 </div>
