@@ -12,7 +12,7 @@ const cartdata = useLoaderData()
     const [Data, setData] = useState(cartdata);
 
     const handleCartDelete = (_id)=>{
-        fetch(`https://mobilemaya-server-side.vercel.app/mycarts/${_id}`, {
+        fetch(`https://brandshop-server-side-csesopnil.vercel.app/mycarts/${_id}`, {
             method: 'DELETE',
         })
         .then((res) => res.json())

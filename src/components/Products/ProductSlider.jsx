@@ -20,7 +20,7 @@ const ProductSlider = () => {
     const [sliderdata, setSliderData] = useState([])
 
     useEffect(()=> {
-        fetch(`https://mobilemaya-server-side.vercel.app/product-sliders/${bnane.name}`)
+        fetch(`https://brandshop-server-side-csesopnil.vercel.app/product-sliders/${bnane.name}`)
         .then(res => res.json())
         .then(data =>setSliderData(data))
     },[])

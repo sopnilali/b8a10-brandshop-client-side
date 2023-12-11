@@ -6,7 +6,7 @@ const LeftBar = () => {
     const [allbrand, setAllbrand] = useState([])
 
     useEffect(()=> {
-        fetch('https://mobilemaya-server-side.vercel.app/brands')
+        fetch('https://brandshop-server-side-csesopnil.vercel.app/brands')
         .then(res => res.json())
         .then(data => setAllbrand(data))
     },[])

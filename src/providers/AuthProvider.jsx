@@ -61,14 +61,14 @@ const AuthProvider = ({children}) => {
 
             // if(currentUser) {
             //     const loggedUser = {email: userEmail}
-            //     axios.post('https://mobilemaya-server-side.vercel.app/jwt', loggedUser, 
+            //     axios.post('https://brandshop-server-side-csesopnil.vercel.app/jwt', loggedUser, 
             //     { withCredentials:true })
             //         .then(res => {
             //             console.log('token response, ',res.data);
             //         })
             // }
             // else {
-            //     axios.post('https://mobilemaya-server-side.vercel.app/logout', loggedUser, 
+            //     axios.post('https://brandshop-server-side-csesopnil.vercel.app/logout', loggedUser, 
             //     { withCredentials:true })
             //     .then(res => {
             //         console.log(res.data);

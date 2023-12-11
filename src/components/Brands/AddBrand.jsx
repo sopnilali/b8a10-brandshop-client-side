@@ -11,7 +11,7 @@ const AddBrand = () => {
         const purl = form.purl.value;
         const brands = {brandName, purl};
         console.log(brands);
-        fetch('https://mobilemaya-server-side.vercel.app/brands', {
+        fetch('https://brandshop-server-side-csesopnil.vercel.app/brands', {
           mode: 'cors',
           credentials: 'include',
           method: 'POST',
