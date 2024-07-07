@@ -7,4 +7,4 @@ Our Project Main Features:
 . If you click on your favorite brand, you will see the products of that brand separately. For example, if you click on Oppo brand, you can see all the products of Oppo.
 
 
-client-side live link : https://mobilemaya.vercel.app/
+client-side live link : https://mobilebajar.vercel.app/
