@@ -24,7 +24,7 @@ const Routes = createBrowserRouter( [
         {
           path:'/',
           element:<Home/>,
-          loader: ()=> fetch(`https://brandshop-server-side-csesopnil.vercel.app/products`)
+          loader: ()=> fetch(`https://b8a10-brandshop-server-side-two.vercel.app/products`)
         }
       ]
     },
@@ -35,26 +35,26 @@ const Routes = createBrowserRouter( [
             {
               path:'/products',
               element:<Products />,
-              loader: ()=> fetch(`https://brandshop-server-side-csesopnil.vercel.app/products`),
+              loader: ()=> fetch(`https://b8a10-brandshop-server-side-two.vercel.app/products`),
               errorElement:<ErrorPage />,
             },
             {
               path:'/brands',
               element:<Brands />,
               errorElement:<ErrorPage />,
-              loader: ()=> fetch(`https://brandshop-server-side-csesopnil.vercel.app/brands`)
+              loader: ()=> fetch(`https://b8a10-brandshop-server-side-two.vercel.app/brands`)
             },
             {
               path:'/products/:name',
               element:<SingleProduct />,
               errorElement:<ErrorPage />,
-              loader:({params}) => fetch(`https://brandshop-server-side-csesopnil.vercel.app/products/${params.name}`)
+              loader:({params}) => fetch(`https://b8a10-brandshop-server-side-two.vercel.app/products/${params.name}`)
             },
             {
               path:'/product-details/:id',
               element:<PrivateRoutes><ProductDetails/></PrivateRoutes>,
               errorElement:<ErrorPage />,
-              loader:({params}) => fetch(`https://brandshop-server-side-csesopnil.vercel.app/product/${params.id}`)
+              loader:({params}) => fetch(`https://b8a10-brandshop-server-side-two.vercel.app/product/${params.id}`)
             }
             
       ]
@@ -68,7 +68,7 @@ const Routes = createBrowserRouter( [
       path:'/update-product/:id',
       element:<PrivateRoutes><UpdateProduct/></PrivateRoutes>,
       errorElement:<ErrorPage />,
-      loader: ({params})=> fetch(`https://brandshop-server-side-csesopnil.vercel.app/product/${params.id}`)
+      loader: ({params})=> fetch(`https://b8a10-brandshop-server-side-two.vercel.app/product/${params.id}`)
     },
     {
       path:'/add-brands',
@@ -89,7 +89,7 @@ const Routes = createBrowserRouter( [
       path:'/mycarts/:userId',
       element:<PrivateRoutes><MyCart/></PrivateRoutes>,
       errorElement:<ErrorPage />,
-      loader: ({params})=> fetch(`https://brandshop-server-side-csesopnil.vercel.app/mycarts/${params.userId}`)
+      loader: ({params})=> fetch(`https://b8a10-brandshop-server-side-two.vercel.app/mycarts/${params.userId}`)
     },
 ])
 
