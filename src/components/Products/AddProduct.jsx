@@ -15,7 +15,7 @@ const AddProduct = () => {
     const handleAddProduct = (event) => {
         event.preventDefault();
         const form = event.target;
-        // product variable
+        // product variabl
         const productName = form.productName.value;
         const brandName = form.brandName.value;
         const types = form.types.value;
