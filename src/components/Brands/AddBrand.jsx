@@ -11,7 +11,7 @@ const AddBrand = () => {
         const purl = form.purl.value;
         const brands = {brandName, purl};
         console.log(brands);
-        fetch('https://brandshop-server-side-csesopnil.vercel.app/brands', {
+        fetch('https://b8a10-brandshop-server-side-two.vercel.app/brands', {
           mode: 'cors',
           credentials: 'include',
           method: 'POST',
