@@ -22,7 +22,7 @@ const ProductDetails = () => {
         const mycart = { productName, brandname, price, productImage, productID, userID }
         console.log(mycart);
 
-        fetch('https://brandshop-server-side-csesopnil.vercel.app/mycarts', {
+        fetch('https://b8a10-brandshop-server-side-two.vercel.app/mycarts', {
           method: 'POST',
           headers: {
             'content-type': 'application/json'

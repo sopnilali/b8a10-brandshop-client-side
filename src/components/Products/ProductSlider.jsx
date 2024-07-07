@@ -20,7 +20,7 @@ const ProductSlider = () => {
     const [sliderdata, setSliderData] = useState([])
 
     useEffect(()=> {
-        fetch(`https://brandshop-server-side-csesopnil.vercel.app/product-sliders/${bnane.name}`)
+        fetch(`https://b8a10-brandshop-server-side-two.vercel.app/product-sliders/${bnane.name}`)
         .then(res => res.json())
         .then(data =>setSliderData(data))
     },[])

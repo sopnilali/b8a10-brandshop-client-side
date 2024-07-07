@@ -13,7 +13,7 @@ const UpdateProduct = () => {
   const [allbrand, setAllbrand] = useState([])
 
   useEffect(()=> {
-    fetch('https://brandshop-server-side-csesopnil.vercel.app/brands')
+    fetch('https://b8a10-brandshop-server-side-two.vercel.app/brands')
     .then(res => res.json())
     .then(data => setAllbrand(data))
 },[])
@@ -32,7 +32,7 @@ const UpdateProduct = () => {
         const products = {productName, brandName, types, price, purl, rating, shortDes}
         // console.log(products);
         
-        fetch(`https://brandshop-server-side-csesopnil.vercel.app/product/${Productdata._id}`, {
+        fetch(`https://b8a10-brandshop-server-side-two.vercel.app/product/${Productdata._id}`, {
           method: 'PUT',
           headers: {
               'content-type': 'application/json'
