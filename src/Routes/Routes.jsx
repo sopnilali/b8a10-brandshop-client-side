@@ -35,7 +35,6 @@ const Routes = createBrowserRouter( [
             {
               path:'/products',
               element:<Products />,
-              loader: ()=> fetch(`https://b8a10-brandshop-server-side-two.vercel.app/products`),
               errorElement:<ErrorPage />,
             },
             {
@@ -48,13 +47,13 @@ const Routes = createBrowserRouter( [
               path:'/products/:name',
               element:<SingleProduct />,
               errorElement:<ErrorPage />,
-              loader:({params}) => fetch(`https://b8a10-brandshop-server-side-two.vercel.app/products/${params.name}`)
+              loader:({params}) => fetch(`https://b8a10-brandshop-server-side-two.vercel.app/brand-products/${params.name}`)
             },
             {
               path:'/product-details/:id',
               element:<PrivateRoutes><ProductDetails/></PrivateRoutes>,
               errorElement:<ErrorPage />,
-              loader:({params}) => fetch(`https://b8a10-brandshop-server-side-two.vercel.app/product/${params.id}`)
+              loader:({params}) => fetch(`https://b8a10-brandshop-server-side-two.vercel.app/single-product/${params.id}`)
             }
             
       ]
@@ -68,7 +67,7 @@ const Routes = createBrowserRouter( [
       path:'/update-product/:id',
       element:<PrivateRoutes><UpdateProduct/></PrivateRoutes>,
       errorElement:<ErrorPage />,
-      loader: ({params})=> fetch(`https://b8a10-brandshop-server-side-two.vercel.app/product/${params.id}`)
+      loader: ({params})=> fetch(`https://b8a10-brandshop-server-side-two.vercel.app/single-product/${params.id}`)
     },
     {
       path:'/add-brands',

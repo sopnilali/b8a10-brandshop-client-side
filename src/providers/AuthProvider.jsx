@@ -54,26 +54,26 @@ const AuthProvider = ({children}) => {
 
     useEffect(()=> {
         const unSubscribe =  onAuthStateChanged(auth, currentUser =>{
-            // const userEmail = currentUser?.email || user?.email;
+            const userEmail = currentUser?.email || user?.email;
             setUser(currentUser)
             setLoading(false)
             // if user exists then issue a taken
 
-            // if(currentUser) {
-            //     const loggedUser = {email: userEmail}
-            //     axios.post('https://brandshop-server-side-csesopnil.vercel.app/jwt', loggedUser, 
-            //     { withCredentials:true })
-            //         .then(res => {
-            //             console.log('token response, ',res.data);
-            //         })
-            // }
-            // else {
-            //     axios.post('https://brandshop-server-side-csesopnil.vercel.app/logout', loggedUser, 
-            //     { withCredentials:true })
-            //     .then(res => {
-            //         console.log(res.data);
-            //     })
-            // }
+            if(currentUser) {
+                const loggedUser = {email: userEmail}
+                axios.post('https://b8a10-brandshop-server-side-two.vercel.app/jwt', loggedUser, 
+                { withCredentials:true })
+                    .then(res => {
+                        console.log('token response, ',res.data);
+                    })
+            }
+            else {
+                axios.post('https://b8a10-brandshop-server-side-two.vercel.app/logout', loggedUser, 
+                { withCredentials:true })
+                .then(res => {
+                    console.log(res.data);
+                })
+            }
           })
           return () => {
               unSubscribe();

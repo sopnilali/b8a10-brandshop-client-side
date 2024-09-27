@@ -4,7 +4,7 @@ import Banner from '../../components/Banner/Banner';
 import MobileReview from '../../components/MobileReview/MobileReview';
 
 const Home = () => {
-    const allproducts = useLoaderData()
+const {products} = useLoaderData()
     // const [page, setPage] = useState(0);
 
     // const {data:{result, postCount}} = useQuery({
@@ -28,7 +28,7 @@ const Home = () => {
                     </div>
                     <div className='grid grid-cols-2 md:grid-cols-3 mx-2 lg:grid-cols-5 gap-2 my-4 '>
                     {
-                        allproducts.map( product => <>
+                        products.map( product => <>
                         <div key={product._id}
                         data-aos="flip-left"
                         data-aos-easing="ease-out-cubic"
@@ -49,14 +49,7 @@ const Home = () => {
                     }
                    
                     </div>
-                    {/* <div className=" flex justify-center items-center ">
-                        {pages.map(( item, index)=> 
-                        <button onClick={()=> setPage(index)} 
-                        className={` my-4 rounded-md btn-sm md:btn-sm ml-2 ${page == index ? " bg-violet-800 text-white" : " text-white bg-violet-600  "}  `}>
-                            {index + 1}</button>
-                        
-                        )}
-                    </div> */}
+
                     <MobileReview/>
                 </div>
 

@@ -20,15 +20,17 @@ const ProductSlider = () => {
     const [sliderdata, setSliderData] = useState([])
 
     useEffect(()=> {
-        fetch(`https://b8a10-brandshop-server-side-two.vercel.app/product-sliders/${bnane.name}`)
+        fetch(`https://b8a10-brandshop-server-side-two.vercel.app/brand-sliders/${bnane.name}`)
         .then(res => res.json())
         .then(data =>setSliderData(data))
     },[])
 
+    console.log(sliderdata);
+
     return (
         <>
         <div className='max-w-7xl mx-auto'>
-
+          
                 <Swiper 
       // install Swiper modules
       modules={[Navigation, Pagination, Autoplay, Scrollbar, A11y]}

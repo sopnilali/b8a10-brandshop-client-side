@@ -1,9 +1,13 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { toast } from "react-toastify";
+import { Rating } from "@smastrom/react-rating";
 
 const AddProduct = () => {
 
   const [allbrand, setAllbrand] = useState([])
+  const [rating, setRating] = useState(0);
+  const navigate = useNavigate()
 
 
   useEffect(()=> {
@@ -21,9 +25,8 @@ const AddProduct = () => {
         const types = form.types.value;
         const price = form.price.value;
         const purl = form.purl.value;
-        const rating = form.rating.value;
         const shortDes = form.shortDes.value;
-        const products = {productName, brandName, types, price, purl, rating, shortDes}
+        const products = {productName, brandName, types, rating, price, purl, shortDes}
         console.log(products);
 
         fetch('https://b8a10-brandshop-server-side-two.vercel.app/products', {
@@ -35,7 +38,14 @@ const AddProduct = () => {
         })
         .then(res => res.json())
         .then(data => {
-            console.log(data);
+            if(!data){
+              toast.warning('Product Not Added')
+              
+            }
+            else{
+              toast.success('Product Added Successfully')
+              navigate('/products')
+            }
         })
 
     }
@@ -95,11 +105,12 @@ const AddProduct = () => {
           <label className="label">
             <span className="label-text">Rating</span>
           </label>
-          <select className="input input-bordered" name="rating" id="">
-            <option className="capitalize " value="5">5</option>
-            <option className="capitalize" value="4">4</option>
-            <option className="capitalize" value="3">3</option>
-          </select>
+          <Rating
+          style={{ maxWidth: 180 }}
+          value={rating}
+          onChange={setRating}
+          isRequired
+        />
         </div>
         <div className="rating rating-md"></div>
         </div>

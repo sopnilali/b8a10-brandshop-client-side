@@ -3,6 +3,7 @@ import { Link, useLoaderData } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import useAuth from '../../hooks/useAuth';
+import { Rating } from '@smastrom/react-rating';
 
 const ProductDetails = () => {
 
@@ -66,7 +67,11 @@ const ProductDetails = () => {
       </tr>
       <tr className='border-b transition duration-300 ease-in-out hover:bg-neutral-100 dark:border-neutral-500 dark:hover:bg-neutral-600'>
         <th className='border-r-2 outline-none'>Rating</th>
-        <td className='font-mono capitalize'>{productDetails.rating}</td>
+        <td className='font-mono capitalize'><Rating
+      style={{ maxWidth: 60 }}
+      value={productDetails.rating}
+      readOnly
+    /></td>
       </tr>
       <tr className='border-b transition duration-300 ease-in-out hover:bg-neutral-100 dark:border-neutral-500 dark:hover:bg-neutral-600'>
         <th className='border-r-2 outline-none '>Price</th>

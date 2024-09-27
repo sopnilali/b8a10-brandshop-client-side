@@ -1,14 +1,16 @@
 
 
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Rating } from "@smastrom/react-rating";
 
 const UpdateProduct = () => {
 
   const Productdata = useLoaderData()
-  console.log(Productdata);
+  const [rating, setRating] = useState(Productdata.rating);
+  const navigate = useNavigate();
 
   const [allbrand, setAllbrand] = useState([])
 
@@ -27,12 +29,11 @@ const UpdateProduct = () => {
         const types = form.types.value;
         const price = form.price.value;
         const purl = form.purl.value;
-        const rating = form.rating.value;
         const shortDes = form.shortDes.value;
         const products = {productName, brandName, types, price, purl, rating, shortDes}
         // console.log(products);
         
-        fetch(`https://b8a10-brandshop-server-side-two.vercel.app/product/${Productdata._id}`, {
+        fetch(`https://b8a10-brandshop-server-side-two.vercel.app/single-product/${Productdata._id}`, {
           method: 'PUT',
           headers: {
               'content-type': 'application/json'
@@ -42,9 +43,10 @@ const UpdateProduct = () => {
         .then(res => res.json())
         .then(data => {
           console.log(data);
-          if(data.modifiedCount == 1) {
+          if(data.modifiedCount === 1) {
 
             toast.success('Product updated successfully')
+            navigate(`/product-details/${Productdata._id}`)
           }
           else if(data.modifiedCount == 0){
             toast.warning('Product already updated!!')
@@ -109,11 +111,12 @@ const UpdateProduct = () => {
           <label className="label">
             <span className="label-text">Rating</span>
           </label>
-          <select className="input input-bordered" name="rating" id="">
-            <option className="capitalize" value="low">Low</option>
-            <option className="capitalize" value="average">Average</option>
-            <option className="capitalize" value="best">Best</option>
-          </select>
+          <Rating
+          style={{ maxWidth: 180 }}
+          value={rating}
+          onChange={setRating}
+          isRequired
+        />
         </div>
         </div>
         <div className="form-control">
